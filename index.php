@@ -10,11 +10,10 @@
 <?php
     require 'Words.php';
     require 'Word_styles.php';
-    if(isset($_GET) && $_GET['input'] != "") {
+    if(isset($_GET['input']) && $_GET['input'] !== "") {
         
         $input = $_GET['input'];
         $cp = new Word_styles($input);
-        echo $cp->get_word()."<br />";
         echo $cp->get_capital_letter($input)."<br />";
         echo $cp->get_alternate_case($input)."<br />";
         echo $cp->export_csv($input);
