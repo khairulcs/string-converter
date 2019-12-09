@@ -12,11 +12,6 @@ class Word_styles extends Words
         return strtoupper($word_style);
     }
 
-    private function get_lower_letter($word_style)
-    {
-        return strtolower($word_style);
-    }
-
     public function get_alternate_case($word_style)
     {
         $word_lengths = strlen($word_style);
@@ -31,12 +26,11 @@ class Word_styles extends Words
     }
 
     public function export_csv($word_style) {
-        $lower_words = $this->get_lower_letter($word_style);
-        $word_arrays = str_split($lower_words);
-        $fp = fopen('exported_string.csv', 'w');
+        $word_arrays = str_split($word_style);
+        $fp = fopen('csv/exported_string.csv', 'w');
         fputcsv($fp, $word_arrays);
         fclose($fp);
-        return "<a href='exported_string.csv'>CSV created!</a> <small><em><-- Click to download</em></small>";
+        return "<a href='csv/exported_string.csv'>CSV created!</a> <small><em><-- Click to download</em></small>";
     }
 }
 ?>
