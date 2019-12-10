@@ -14,9 +14,9 @@
         
         $input = $_GET['input'];
         $cp = new Word_styles($input);
-        echo $cp->get_capital_letter($input)."<br />";
-        echo $cp->get_alternate_case($input)."<br />";
-        echo $cp->export_csv($input);
+        echo $cp->get_capital_letter()."<br />";
+        echo $cp->get_alternate_case()."<br />";
+        echo $cp->export_csv();
     } else {
         echo "Please insert a string";
     }
